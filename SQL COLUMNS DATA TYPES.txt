@@ -1,0 +1,9 @@
+SQL DATA TYPES
+
+Date:      SQL SERVER: DT_DATE    SSIS: DT_WSTR
+Open:      SQL SERVER: DT_R8      SSIS: DT_R4
+High:      SQL SERVER: DT_R8      SSIS: DT_R4
+Low:       SQL SERVER: DT_R8      SSIS: DT_R4
+Close:     SQL SERVER: DT_R8      SSIS: DT_R4
+Adj Close: SQL SERVER: DT_R8      SSIS: DT_R4
+Volume:    SQL SERVER: DT_I8      SSIS: DT_R4
