@@ -627,17 +627,31 @@ GO
 -------------------------------------------
 -- Create individual vw_THA_MACD views
 -------------------------------------------
+-------------------------------------------
+-- Create individual vw_THA_MACD views with Signal Line
+-------------------------------------------
 CREATE VIEW vw_THA_MACD AS
 WITH THA_EMA AS (
 SELECT FK_DT_Date,
-	AVG(THALES_Close) OVER (ORDER BY FK_DT_Date DESC ROWS BETWEEN 1 FOLLOWING AND 12 FOLLOWING) AS THA_EMA12,
-		AVG(THALES_Close) OVER (ORDER BY FK_DT_Date DESC ROWS BETWEEN 1 FOLLOWING AND 26 FOLLOWING) AS THA_EMA26
-FROM THALES_STOCK
+	AVG(THALES_Close) OVER (ORDER BY FK_DT_Date ROWS BETWEEN 12 PRECEDING AND 1 PRECEDING) AS THA_EMA12,
+	AVG(THALES_Close) OVER (ORDER BY FK_DT_Date ROWS BETWEEN 26 PRECEDING AND 1 PRECEDING) AS THA_EMA26,
+	FROM THALES_STOCK
+),
+THA_MACD AS (
+SELECT FK_DT_Date,
+	THA_EMA12,
+	THA_EMA26,
+	(THA_EMA12 - THA_EMA26) as THA_MACD
+	FROM THA_EMA
 )
-SELECT * ,
-(THA_EMA12 - THA_EMA26) as THA_MACD
-FROM THA_EMA
+SELECT A.FK_DT_Date,
+	   A.THA_EMA12,
+	   A.THA_EMA26,
+	   A.THA_MACD,
+	   AVG(A.THA_MACD) OVER (ORDER BY A.FK_DT_Date ROWS BETWEEN 9 PRECEDING AND 1 PRECEDING) AS THA_Signal
+FROM THA_MACD AS A
 GO
+
 -------------------------------------------
 -- Create individual vw_SPI_MACD views
 -------------------------------------------
@@ -689,6 +703,7 @@ SELECT
 	T.THA_EMA12,
 	T.THA_EMA26,
 	T.THA_MACD,
+	T.THA_Signal,
   	E.EUR_EMA12,
 	E.EUR_EMA26,
 	E.EUR_MACD,
@@ -821,6 +836,7 @@ CREATE VIEW vw_COMBINED_MODEL AS (
 	-- COMBINED_TABLES
 	-- COMBINED_MACD
 	MACD.THA_EMA12,
+	MACD.THA_Signal,
 	MACD.THA_EMA26,
 	MACD.THA_MACD,
 	MACD.EUR_EMA12,
@@ -974,7 +990,42 @@ CREATE VIEW vw_TRAINING_DATA AS (
 	FROM vw_IMPORTANCE_RF
 	WHERE IsTestSet=0
 );
-
+CREATE VIEW vw_PowerBIViz AS (
+	SELECT  T.FK_DT_Date,
+    T.THALES_Open AS THA_Open, 
+    T.THALES_High AS THA_High,
+    T.THALES_Low AS THA_Low,
+    T.THALES_Close AS THA_Close,
+    T.THALES_Adj_Close AS THA_Adj_Close,
+    T.THALES_Volume AS THA_Volume,
+	MACD.THA_EMA12,
+	MACD.THA_EMA26,
+	MACD.THA_MACD,
+	MACD.THA_Signal,
+	BB.THA_SMA,
+	BB.THA_UpperBand,
+	BB.THA_LowerBand,
+	RSI.THA_RSI_7,
+    RSI.THA_RSI_30,
+    RSI.THA_RSI_90,
+    RSI.THA_RSI_180,
+	MA.THA_MA_7,
+    MA.THA_MA_30,
+    MA.THA_MA_90,
+    MA.THA_MA_180,
+	OBV.THA_OBV
+	FROM THALES_STOCK T
+	LEFT JOIN 
+		vw_THA_OBV OBV ON T.FK_DT_Date = OBV.FK_DT_Date
+	LEFT JOIN 
+		vw_THA_MA MA ON T.FK_DT_Date = MA.FK_DT_Date
+	LEFT JOIN 
+		vw_THA_BB BB ON T.FK_DT_Date = BB.FK_DT_Date
+	LEFT JOIN 
+		vw_THA_RSI RSI ON T.FK_DT_Date = RSI.FK_DT_Date
+	LEFT JOIN 
+		vw_THA_MACD MACD ON T.FK_DT_Date = MACD.FK_DT_Date
+)
 -----------------------------------------------
 -- DROP VIEWS
 -----------------------------------------------
