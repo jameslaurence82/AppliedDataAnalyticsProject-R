@@ -5,10 +5,7 @@ Author: James Laurence
 Date: January 16th, 2024/February 15th, 2024
 DBAS3090 - ICE 1 requirement
 ****** ***** ***** ***** ***** ***** ***** *****/
--- use this code so that the date is the newest date in the views
--- SELECT * 
--- FROM [ThalesStockPredictor].[dbo].[CombinedView]
--- order by [FK_DT_Date] desc
+
 -- Creates Thales Stock Predictor Database
 CREATE Database ThalesStockPredictor
 GO
@@ -25,7 +22,7 @@ This script will generate the date range required for the DATE table
 to allowed it being used as foreign key. 
 Used ChatGPT for help with script generation
 */
--- Declare variables for the date range
+-- variables for the date range
 DECLARE @StartDate DATE = '1999-01-01';
 DECLARE @EndDate DATE = '2050-12-31';
 
@@ -39,7 +36,6 @@ BEGIN
         FROM DATE
         WHERE DT_Date = @StartDate
     );
-
     SET @StartDate = DATEADD(DAY, 1, @StartDate);
 END
 GO
@@ -102,25 +98,25 @@ GO
 --DROP TABLE [dbo].[MODEL_RMSE]
 --------------------------------------------------------------------------------------
 -- set foreign keys after table creations
-CREATE TABLE THALES_STOCK
+ALTER TABLE THALES_STOCK
 ADD CONSTRAINT Thales_FK_Date FOREIGN KEY (FK_DT_Date) 
 REFERENCES [DATE](DT_Date)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 GO
-CREATE TABLE S_P_INDEX
+ALTER TABLE S_P_INDEX
 ADD CONSTRAINT SP500_FK_Date FOREIGN KEY (FK_DT_Date) 
 REFERENCES [DATE](DT_Date)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 GO
-CREATE TABLE FRANCE_INDEX
+ALTER TABLE FRANCE_INDEX
 ADD CONSTRAINT France_FK_Date FOREIGN KEY (FK_DT_Date) 
 REFERENCES [DATE](DT_Date)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 GO
-CREATE TABLE EURO_INDEX
+ALTER TABLE EURO_INDEX
 ADD CONSTRAINT Euro_FK_Date FOREIGN KEY (FK_DT_Date) 
 REFERENCES [DATE](DT_Date)
 ON DELETE CASCADE

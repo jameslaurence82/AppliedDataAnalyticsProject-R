@@ -1,0 +1,38 @@
+Model run at: 2024-04-14 04:52:44
+
+
+Model Summary:
+                Length Class      Mode     
+call               5   -none-     call     
+type               1   -none-     character
+predicted       5242   -none-     numeric  
+mse             3000   -none-     numeric  
+rsq             3000   -none-     numeric  
+oob.times       5242   -none-     numeric  
+importance        61   -none-     numeric  
+importanceSD       0   -none-     NULL     
+localImportance    0   -none-     NULL     
+proximity          0   -none-     NULL     
+ntree              1   -none-     numeric  
+mtry               1   -none-     numeric  
+forest            11   -none-     list     
+coefs              0   -none-     NULL     
+y               5242   -none-     numeric  
+test               0   -none-     NULL     
+inbag              0   -none-     NULL     
+xNames            61   -none-     character
+problemType        1   -none-     character
+tuneValue          1   data.frame list     
+obsLevels          1   -none-     logical  
+param              1   -none-     list     
+
+
+Performance Metrics:
+Previous Test RMSE on unseen data: 1.07810590046098
+New Test RMSE on unseen data: 1.07187484059555
+MAE: 0.708702579278427
+R-squared: 0.999035648420111
+
+
+Training Control Update:
+As training data increases, repeats set to 10 for cross-validation for current data size.

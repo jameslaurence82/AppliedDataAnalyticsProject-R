@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="ThalesETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{F64CF315-1DAF-4A69-8343-20DDA94D2928}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{0C9DB3BB-5F9F-4E88-B15C-84F3462199DD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2708,43 +2708,31 @@ where [refTable].[FK_DT_Date] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
+          Size="194.4,41.6"
           Id="Package\CSVDownload&amp;Cleaning"
           TopLeft="143,297" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\ETL Data to DB"
           TopLeft="162,456" />
         <NodeLayout
-          Size="169,42"
+          Size="168.8,41.6"
           Id="Package\SQL_GetLastDate"
           TopLeft="149,138" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="233.5,180">
+          TopLeft="236.8,179.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10,117"
+              EndConnector="0,117.4"
               Start="0,0"
-              End="10,109.5">
+              End="0,109.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54.5"
-                    Point2="0,58.5"
-                    Point3="4,58.5" />
-                  <mssgle:LineSegment
-                    End="6,58.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6,58.5"
-                    Point2="10,58.5"
-                    Point3="10,62.5" />
-                  <mssgle:LineSegment
-                    End="10,109.5" />
+                    End="0,109.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2755,18 +2743,18 @@ where [refTable].[FK_DT_Date] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="241.75,339">
+          TopLeft="240.1,338.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,117"
+              EndConnector="0,117.4"
               Start="0,0"
-              End="0,109.5">
+              End="0,109.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,109.5" />
+                    End="0,109.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2784,78 +2772,56 @@ where [refTable].[FK_DT_Date] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="166,42"
+          Id="Package\ETL Data to DB\THALES_STOCK"
+          TopLeft="24,497" />
+        <NodeLayout
           Size="143,42"
           Id="Package\ETL Data to DB\THA_Lookup"
           TopLeft="36,319" />
         <NodeLayout
-          Size="174,42"
-          Id="Package\ETL Data to DB\Thales_Stock_CSV"
-          TopLeft="19,143" />
-        <EdgeLayout
-          Id="Package\ETL Data to DB.Paths[Flat File Source Output]"
-          TopLeft="106.75,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,134"
-              Start="0,0"
-              End="0,126.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,126.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\ETL Data to DB\THALES_STOCK"
-          TopLeft="24,497" />
-        <EdgeLayout
-          Id="Package\ETL Data to DB.Paths[Lookup No Match Output]"
-          TopLeft="107.25,361">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,136"
-              Start="0,0"
-              End="0,128.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,128.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,58.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="144,42"
+          Id="Package\ETL Data to DB\EUR_Lookup"
+          TopLeft="687,321" />
         <NodeLayout
           Size="139,42"
           Id="Package\ETL Data to DB\S_P_INDEX"
           TopLeft="258,494" />
         <NodeLayout
+          Size="175,42"
+          Id="Package\ETL Data to DB\France_Index_CSV"
+          TopLeft="457,143" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\ETL Data to DB\Euro_Index_CSV"
+          TopLeft="670,145" />
+        <NodeLayout
           Size="161,42"
           Id="Package\ETL Data to DB\S_P_Index_CSV"
           TopLeft="246,142" />
         <NodeLayout
+          Size="143,42"
+          Id="Package\ETL Data to DB\FRA_Lookup"
+          TopLeft="474,319" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\ETL Data to DB\Thales_Stock_CSV"
+          TopLeft="19,143" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\ETL Data to DB\FRA_INDEX"
+          TopLeft="475,491" />
+        <NodeLayout
           Size="139,42"
           Id="Package\ETL Data to DB\SPI_Lookup"
           TopLeft="258,314" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\ETL Data to DB\EURO_INDEX"
+          TopLeft="688,493" />
         <EdgeLayout
-          Id="Package\ETL Data to DB.Paths[Flat File Source Output1]"
-          TopLeft="327,184">
+          Id="Package\ETL Data to DB.Paths[Lookup No Match Output3]"
+          TopLeft="761,363">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2872,7 +2838,33 @@ where [refTable].[FK_DT_Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,55.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL Data to DB.Paths[Lookup No Match Output2]"
+          TopLeft="545.5,361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130"
+              Start="0,0"
+              End="0,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,55.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2899,76 +2891,30 @@ where [refTable].[FK_DT_Date] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="143,42"
-          Id="Package\ETL Data to DB\FRA_Lookup"
-          TopLeft="474,319" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\ETL Data to DB\France_Index_CSV"
-          TopLeft="457,143" />
         <EdgeLayout
-          Id="Package\ETL Data to DB.Paths[Flat File Source Output2]"
-          TopLeft="545,185">
+          Id="Package\ETL Data to DB.Paths[Lookup No Match Output]"
+          TopLeft="107.25,361">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,134"
+              EndConnector="0,136"
               Start="0,0"
-              End="0,126.5">
+              End="0,128.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,126.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="141,42"
-          Id="Package\ETL Data to DB\FRA_INDEX"
-          TopLeft="475,491" />
-        <EdgeLayout
-          Id="Package\ETL Data to DB.Paths[Lookup No Match Output2]"
-          TopLeft="545.5,361">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,130"
-              Start="0,0"
-              End="0,122.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,122.5" />
+                    End="0,128.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,55.4453125,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,58.4453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,42"
-          Id="Package\ETL Data to DB\EUR_Lookup"
-          TopLeft="687,321" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\ETL Data to DB\Euro_Index_CSV"
-          TopLeft="670,145" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\ETL Data to DB\EURO_INDEX"
-          TopLeft="688,493" />
         <EdgeLayout
           Id="Package\ETL Data to DB.Paths[Flat File Source Output3]"
           TopLeft="755.5,187">
@@ -2988,12 +2934,38 @@ where [refTable].[FK_DT_Date] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL Data to DB.Paths[Lookup No Match Output3]"
-          TopLeft="761,363">
+          Id="Package\ETL Data to DB.Paths[Flat File Source Output2]"
+          TopLeft="545,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,134"
+              Start="0,0"
+              End="0,126.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL Data to DB.Paths[Flat File Source Output1]"
+          TopLeft="327,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3011,7 +2983,31 @@ where [refTable].[FK_DT_Date] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,55.4453125,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL Data to DB.Paths[Flat File Source Output]"
+          TopLeft="106.75,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,134"
+              Start="0,0"
+              End="0,126.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

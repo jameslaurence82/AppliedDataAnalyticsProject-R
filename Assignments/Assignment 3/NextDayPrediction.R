@@ -100,11 +100,12 @@ rm(queryTrainingData)
 rm(queryRMSE)
 rm(dbconnection)
 
-
-
 ######################################################################################
 # Prep Next Day Prediction Data for predictive Machine Learning
 ######################################################################################
+
+# Extract the date value from the FK_DT_Date column
+date_value <- as.Date(Predictor_Data$FK_DT_Date[1], format = "%Y-%m-%d")
 
 # change date column to be number date (UNIX Epoch)
 Predictor_Data$FK_DT_Date <- as.numeric(as.POSIXct(Predictor_Data$FK_DT_Date))
@@ -128,11 +129,19 @@ pred_y = predict(rfmodel, test_x)
 # Display prediction
 pred_y <- as.data.frame(pred_y)
 
+#Add date to the Prediction Dataframe
+# Add one day to the date value
+next_day <- date_value + 1
+
+# Convert the next day value to a character string
+next_day <- as.character(next_day)
+
+# Add Date to the prediction dataframe
+pred_y$next_day <- next_day
+
+pred_y
 # Basic summary
 model_summary <- capture.output(print(rfmodel))
 
 # Convert summary to dataframe
 model_summary_df <- data.frame(Summary = model_summary, stringsAsFactors = FALSE)
-
-# Display model_summary dataframe
-model_summary_df

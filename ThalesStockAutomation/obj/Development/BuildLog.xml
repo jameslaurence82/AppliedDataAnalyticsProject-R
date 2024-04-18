@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>ThalesStockAutomation</Name>
-    <LastWriteTime>2024-03-30T14:56:05.3754544Z</LastWriteTime>
+    <LastWriteTime>2024-04-11T15:46:36.5449137Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ThalesETL.dtsx</Name>
-      <LastWriteTime>2024-03-30T14:47:09.065103Z</LastWriteTime>
+      <LastWriteTime>2024-04-15T10:49:56.9188997Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ThalesModel.dtsx</Name>
-      <LastWriteTime>2024-03-30T15:31:55.4416589Z</LastWriteTime>
+      <LastWriteTime>2024-04-11T15:46:36.5407086Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
