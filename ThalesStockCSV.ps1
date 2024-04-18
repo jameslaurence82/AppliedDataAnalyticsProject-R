@@ -1,4 +1,4 @@
-# get min date value from SSIS expression
+# get min date value from SSIS expression 
 param([string]$DT)
 Write-Host("The UNIX date passed is: " + $DT)
 
